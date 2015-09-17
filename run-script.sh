@@ -9,9 +9,9 @@ node_modules/.bin/jshint \
 
 for file in $(find . -name wscript -print); do
   pushd $(dirname $file)
-    # Lint the C code
-    python $ROOT/cpplint.py \
-      $(find src -type f \( -iname \*.c -o -iname \*.h \) | tr '\n' ' ') || { exit 1; }
+    # Lint the C code (disabled because there is none)
+    #python $ROOT/cpplint.py \
+      # $(find src -type f \( -iname \*.c -o -iname \*.h \) | tr '\n' ' ') || { exit 1; }
 
     # Build the app using Pebble SDK
     ~/pebble-dev/PebbleSDK-3.0/bin/pebble build
